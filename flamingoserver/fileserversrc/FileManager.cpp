@@ -66,6 +66,9 @@ bool FileManager::Init(const char* basepath)
         //    continue;
         //}
 
+        //TODO emplace_back 性能比push_back更高，原理需要研究下
+
+        // m_listFiles 似乎没有存储windows下文件
         m_listFiles.emplace_back(dirp->d_name);
         LOGI("filename: %s", dirp->d_name);
     }

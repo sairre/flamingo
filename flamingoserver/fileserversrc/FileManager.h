@@ -7,7 +7,7 @@
 #include <list>
 #include <mutex>
 
-class FileManager final
+class FileManager final //final 关键字表示不希望被继承，继承会报错
 {
 public:
     FileManager();

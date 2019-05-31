@@ -102,6 +102,8 @@ namespace net
 		MessageCallback                                 messageCallback_;
 		WriteCompleteCallback                           writeCompleteCallback_;
 		ThreadInitCallback                              threadInitCallback_;
+
+		// c++11 Ô­×Ó²Ù×÷
 		std::atomic<int>                                started_;
 		int                                             nextConnId_;  // always in loop thread
 		ConnectionMap                                   connections_;

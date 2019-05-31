@@ -6,7 +6,7 @@ class Singleton
 public:
 	static T& Instance()
 	{
-		//pthread_once(&ponce_, &Singleton::init);
+		// 必须保证不在多线程中创建，否则不安全
 		if (nullptr == value_)
 		{
 			value_ = new T();
@@ -21,6 +21,7 @@ private:
 	Singleton(const Singleton&);
 	Singleton& operator=(const Singleton&);
 
+	// TODO 为什么还需要这个接口？？
 	static void init()
 	{
 		value_ = new T();
